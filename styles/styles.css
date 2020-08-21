@@ -38,19 +38,35 @@ body {
 
 .page-title {
   font-family: 'TT Lakes Bold';
-  font-size: 2rem;
+  font-size: 1.75rem; /* 28px = 32 - 4 = 2rem - 0.25rem */
   line-height: 1.43;
+  margin: 24px 0;
+  display: flex;
+  color: #1B1C21;
+}
+.page-title::before {
+  content: "";
+  display: inline-block;
+  width: 4px;
+  height: 40px;
+  background-color: #41F6D7;
+  border-radius: 0 4px 4px 0;
+  margin-right: 12px;
+}
+
+.hero__text-box {
+  margin: 24px 0;
 }
 
 .hero__paragraph {
   font-size: .875rem;
   line-height: 1.29;
+  margin: 0 5% 24px;
+  letter-spacing: 0.2px;
+  color: #1B1C21;
 }
 
-.slide-menu__item {
-  font-size: 1rem;
-  line-height: 1.5
-}
+
 
 .expand-button {
   display: flex;
@@ -65,11 +81,57 @@ body {
   cursor: pointer;
   text-align: left;
   letter-spacing: -0.2px;
+  color: #1B1C21;
 }
 .expand-button::before {
   content: "";
   width: 24px; /*3 / 40*/
   height: 24px;
+  margin-right: 8px;
   background: transparent url('./../img/icon-readmore.svg') 50% 50% no-repeat;
-  background-size: contain;
+  /* background-size: contain; */
+}
+
+.page-content__menu {
+  overflow: scroll;
+}
+
+.slide-menu__list {
+  display: flex;
+  list-style: none;
+  margin: 0 5%;
+  padding-left: 0;
+  width:
+}
+.slide-menu__item {
+  padding: 8px 9.53px 8px 16px;
+  margin-right: 0;
+  white-space: nowrap;
+  font-size: 1rem;
+  line-height: 1.5;
+  border: 2px solid #F8F8F8
+}
+.slide-menu__item--active {
+  background: #FFFFFF;
+  border: 2px solid #B8FFEC;
+  box-sizing: border-box;
+  border-radius: 6px;
+}
+
+
+.slide-menu__link {
+  text-decoration: none;
+  color: #7E7E82;
+}
+.slide-menu__link:active, .slide-menu__link:hover, .slide-menu__link:focus {
+  color: #1B1C21;
+}
+
+.hero__figure {
+  margin: 16px 0;
+
+}
+
+.hero__img {
+  max-width: 100%;
 }
