@@ -30,17 +30,18 @@ body {
   font-family: 'TT Lakes Regular';
   font-size: 16px;
   margin: 0;
+  background-color: #F8F8F8;
 }
 
 .page-content {
-  background-color: #F8F8F8;
+
 }
 
 .page-title {
   font-family: 'TT Lakes Bold';
   font-size: 1.75rem; /* 28px = 32 - 4 = 2rem - 0.25rem */
   line-height: 1.43;
-  margin: 24px 0;
+  margin: 1.5rem 0; /* 24px */
   display: flex;
   color: #1B1C21;
 }
@@ -51,17 +52,17 @@ body {
   height: 40px;
   background-color: #41F6D7;
   border-radius: 0 4px 4px 0;
-  margin-right: 12px;
+  margin-right: .75rem; /*12px;*/
 }
 
 .hero__text-box {
-  margin: 24px 0;
+  margin: 1.5rem 0;
 }
 
 .hero__paragraph {
   font-size: .875rem;
-  line-height: 1.29;
-  margin: 0 5% 24px;
+  line-height: 1.29rem;
+  margin: 0 5% 1.5rem;
   letter-spacing: 0.2px;
   color: #1B1C21;
 }
@@ -75,7 +76,7 @@ body {
   line-height: 1.5;
   border: none;
   background-color: inherit;
-  height: 24px;
+  height: 1.5rem;
   margin-left: 5%;
   padding: 0;
   cursor: pointer;
@@ -85,9 +86,9 @@ body {
 }
 .expand-button::before {
   content: "";
-  width: 24px; /*3 / 40*/
-  height: 24px;
-  margin-right: 8px;
+  width: 1.5rem; /*3 / 40*/
+  height: 1.5rem;
+  margin-right: .5rem;
   background: transparent url('./../img/icon-readmore.svg') 50% 50% no-repeat;
   /* background-size: contain; */
 }
@@ -128,10 +129,38 @@ body {
 }
 
 .hero__figure {
-  margin: 16px 0;
+  margin: 1rem 0;
 
 }
 
 .hero__img {
   max-width: 100%;
+}
+
+.page-footer {
+  border-top: 1px solid #D9FFF5;
+  padding: 1rem 1rem 0;
+}
+
+.footer-list {
+  list-style: none;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+.footer-list__item {
+  margin-bottom: 1rem;
+  font-size: .875em;
+  line-height: 1rem;
+  color: #7E7E82;
+}
+.footer-list__link {
+  text-decoration: none;
+  color: #7E7E82;
+}
+.footer-list__link:hover, .footer-list__link:active, .footer-list__link:focus {
+  text-decoration: underline;
+}
+.footer-list__link--copyright {
+  display: block;
 }
