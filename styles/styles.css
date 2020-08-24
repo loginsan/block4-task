@@ -37,22 +37,86 @@ body {
 
 }
 
+.upper-menu {
+  border-bottom: 1px solid #D9FFF5;
+  background-color: #ffffff;
+  margin-bottom: 1.5rem;
+}
+.upper-menu__blocks {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  margin: 0 5%;
+  padding: 0;
+  height: 88px;
+}
+
+.upper-menu__list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.upper-menu__item {
+  margin-right: 1rem;
+}
+.upper-menu__item:last-child {
+  margin-right: 0;
+}
+.upper-menu__item--sm {
+  display: none;
+}
+.upper-menu__item--divider {
+  content: "";
+  background-color: #EAEAEA;
+  height: 2rem;
+  width: 2px;
+  border-radius: 1px;
+}
+
+.upper-menu__link {
+  text-decoration: none;
+}
+
+.round-icon {
+  display: flex;
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: #FF3E79;
+  border-radius: 50%;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.upper-menu__item--logo {
+  width: 97px;
+  height: 51px;
+  background: url('./../img/cps-logo.svg') 50% 50% no-repeat;
+}
+
 .page-title {
   font-family: 'TT Lakes Bold';
   font-size: 1.75rem; /* 28px = 32 - 4 = 2rem - 0.25rem */
   line-height: 1.43;
   margin: 1.5rem 0; /* 24px */
-  display: flex;
+  position: relative;
   color: #1B1C21;
+  padding-left: 5%;
 }
 .page-title::before {
   content: "";
-  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: 0;
   width: 4px;
   height: 40px;
   background-color: #41F6D7;
   border-radius: 0 4px 4px 0;
-  margin-right: .75rem; /*12px;*/
 }
 
 .hero__text-box {
@@ -105,7 +169,7 @@ body {
   width:
 }
 .slide-menu__item {
-  padding: 8px 9.53px 8px 16px;
+  padding: .5rem 1rem;
   margin-right: 0;
   white-space: nowrap;
   font-size: 1rem;
