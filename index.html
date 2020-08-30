@@ -10,66 +10,93 @@
   </head>
   <body class="services-page">
 
-    <header class="upper-menu">
-      <ul class="upper-menu__blocks">
-        <li class="upper-menu__block upper-menu__block--primary">
-          <ul class="upper-menu__list">
-            <li class="upper-menu__item">
-              <a href="#" title="Меню" class="upper-menu__link round-icon round-icon--burger">Меню</a>
+    <header class="cpanel">
+      <ul class="cpanel__blocks">
+        <li class="cpanel__block cpanel__block--primary">
+          <ul class="cpanel__list">
+            <li class="cpanel__item">
+              <a href="#" title="Меню" class="cpanel__link oicon oicon--burger">Меню</a>
             </li>
-            <li class="upper-menu__item upper-menu__item--divider upper-menu__item--sm"></li>
-            <li class="upper-menu__item upper-menu__item--logo"></li>
+            <li class="cpanel__item cpanel__item--divider cpanel__item--sm"></li>
+            <li class="cpanel__item cpanel__item--logo"></li>
           </ul>
         </li>
-        <li class="upper-menu__block upper-menu__block--secondary">
-          <ul class="upper-menu__list">
-            <li class="upper-menu__item upper-menu__item--sm">
-              <a href="#" title="Позвонить" class="upper-menu__link round-icon round-icon--call">Позвонить</a>
+        <li class="cpanel__block cpanel__block--secondary">
+          <ul class="cpanel__list">
+            <li class="cpanel__item cpanel__item--sm">
+              <a href="#" title="Позвонить" class="cpanel__link oicon oicon--call">Позвонить</a>
             </li>
-            <li class="upper-menu__item upper-menu__item--sm">
-              <a href="#" title="Чат" class="upper-menu__link round-icon round-icon--chat">Чат</a>
+            <li class="cpanel__item cpanel__item--sm">
+              <a href="#" title="Чат" class="cpanel__link oicon oicon--chat">Чат</a>
             </li>
-            <li class="upper-menu__item upper-menu__item--sm">
-              <a href="#" title="Личный кабинет" class="upper-menu__link round-icon round-icon--profile">Профиль</a>
+            <li class="cpanel__item cpanel__item--sm">
+              <a href="#" title="Личный кабинет" class="cpanel__link oicon oicon--profile">Профиль</a>
             </li>
-            <li class="upper-menu__item upper-menu__item--divider"></li>
-            <li class="upper-menu__item">
-              <a href="#" title="Оставить заявку" class="upper-menu__link round-icon round-icon--repair">Оставить заявку</a>
+            <li class="cpanel__item cpanel__item--divider"></li>
+            <li class="cpanel__item">
+              <a href="#" title="Оставить заявку" class="cpanel__link oicon oicon--repair">Оставить заявку</a>
             </li>
-            <li class="upper-menu__item">
-              <a href="#" title="Статус ремонта" class="upper-menu__link round-icon round-icon--status">Статус ремонта</a>
+            <li class="cpanel__item">
+              <a href="#" title="Статус ремонта" class="cpanel__link oicon oicon--status">Статус ремонта</a>
             </li>
           </ul>
         </li>
       </ul>
     </header>
 
-    <main class="page-content">
+    <main class="page">
 
-      <h1 class="page-content__title page-title">Услуги и сервисы</h1>
+      <h1 class="page__title page-title">Услуги и сервисы</h1>
 
-      <nav class="page-content__menu slide-menu">
-        <ul class="slide-menu__list">
-          <li class="slide-menu__item slide-menu__item--active"><a href="#" class="slide-menu__link">Ремонтируемые бренды</a></li>
-          <li class="slide-menu__item"><a href="#" class="slide-menu__link">Дополнительные услуги</a></li>
-          <li class="slide-menu__item"><a href="#" class="slide-menu__link">Цены на услуги</a></li>
-          <li class="slide-menu__item"><a href="#" class="slide-menu__link">Адреса сервисных центров</a></li>
-          <li class="slide-menu__item"><a href="#" class="slide-menu__link">Специальные цены</a></li>
-          <li class="slide-menu__item"><a href="#" class="slide-menu__link">Отзывы</a></li>
+      <nav class="page__menu chapters">
+        <ul class="chapters__list">
+          <li class="chapters__item chapters__item--active"><a href="#" class="chapters__link">Ремонтируемые бренды</a></li>
+          <li class="chapters__item"><a href="#" class="chapters__link">Дополнительные услуги</a></li>
+          <li class="chapters__item"><a href="#" class="chapters__link">Цены на услуги</a></li>
+          <li class="chapters__item"><a href="#" class="chapters__link">Адреса сервисных центров</a></li>
+          <li class="chapters__item"><a href="#" class="chapters__link">Специальные цены</a></li>
+          <li class="chapters__item"><a href="#" class="chapters__link">Отзывы</a></li>
         </ul>
       </nav>
 
-      <article class="hero">
-        <section class="hero__text-box hero__text-box--short">
+      <section class="page__hero hero">
+        <article class="hero__text-box hero__text-box--short">
           <p class="hero__paragraph">Мы являемся авторизованным сервисным центром по ремонту техники Dell. Только у нас вы можете отремонтировать свой ноутбук Dell с официальной гарантией производителя.</p>
           <p class="hero__paragraph">Мы успешно работаем с 1992 года и заслужили репутацию надежного партнера, что подтверждает большое количество постоянных клиентов. Мы гордимся тем, что к нам обращаются по рекомендациям и, в свою очередь, советуют нас родным и близким.</p>
           <button class="hero__expand-button expand-button">Читать далее</button>
-        </section>
+        </article>
 
         <figure class="hero__figure">
           <img src="./files/hero-services.png" alt="CSP Services" class="hero__img" />
         </figure>
-      </article>
+      </section>
+
+      <section class="page__chapter chapter chapter--brands" id="brands">
+        <h2 class="chapter__title">Ремонт техники различных брендов</h2>
+        <article class="chapter_content">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis molestiae nam suscipit, quae nesciunt recusandae quod officiis tenetur aliquam blanditiis unde sequi, deserunt accusamus delectus ad, quia labore hic qui?</p>
+          <p>Repellendus culpa porro libero mollitia, praesentium delectus blanditiis autem, numquam provident nostrum quae dolorem a laborum consequuntur debitis distinctio eos incidunt deserunt harum optio quibusdam sequi quos quis quo. Sequi!</p>
+          <p>Nihil deserunt ipsum accusamus beatae reprehenderit, soluta quis autem earum facilis. Ipsum, dolorum commodi. Iusto, ad, numquam doloribus iure voluptates repudiandae magni recusandae unde ducimus molestiae laborum consequatur architecto voluptate.</p>
+        </article>
+      </section>
+
+      <section class="page__chapter chapter chapter--technics" id="technics">
+        <h2 class="chapter__title">Ремонт различных видов техники</h2>
+        <article class="chapter_content">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis molestiae nam suscipit, quae nesciunt recusandae quod officiis tenetur aliquam blanditiis unde sequi, deserunt accusamus delectus ad, quia labore hic qui?</p>
+          <p>Repellendus culpa porro libero mollitia, praesentium delectus blanditiis autem, numquam provident nostrum quae dolorem a laborum consequuntur debitis distinctio eos incidunt deserunt harum optio quibusdam sequi quos quis quo. Sequi!</p>
+          <p>Nihil deserunt ipsum accusamus beatae reprehenderit, soluta quis autem earum facilis. Ipsum, dolorum commodi. Iusto, ad, numquam doloribus iure voluptates repudiandae magni recusandae unde ducimus molestiae laborum consequatur architecto voluptate.</p>
+        </article>
+      </section>
+
+      <section class="page__chapter chapter chapter--prices" id="prices">
+        <h2 class="chapter__title">Цены на услуги</h2>
+        <article class="chapter_content">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis molestiae nam suscipit, quae nesciunt recusandae quod officiis tenetur aliquam blanditiis unde sequi, deserunt accusamus delectus ad, quia labore hic qui?</p>
+          <p>Repellendus culpa porro libero mollitia, praesentium delectus blanditiis autem, numquam provident nostrum quae dolorem a laborum consequuntur debitis distinctio eos incidunt deserunt harum optio quibusdam sequi quos quis quo. Sequi!</p>
+          <p>Nihil deserunt ipsum accusamus beatae reprehenderit, soluta quis autem earum facilis. Ipsum, dolorum commodi. Iusto, ad, numquam doloribus iure voluptates repudiandae magni recusandae unde ducimus molestiae laborum consequatur architecto voluptate.</p>
+        </article>
+      </section>
 
     </main>
 
@@ -78,11 +105,11 @@
     </aside>
 
     <footer class="page-footer">
-      <ul class="page-footer__list footer-list">
-        <li class="footer-list__item"><span class="">© 2019 CPS</span>
-            <a href="#" class="footer-list__link footer-list__link--copyright" title="Разработано командой Apesong">Разработано командой Apesong</a></li>
-        <li class="footer-list__item"><a href="#" class="footer-list__link" title="Политика конфиденциальности">Политика конфиденциальности</a></li>
-        <li class="footer-list__item">Информация, размещенная на данной странице, не является публичной офертой</li>
+      <ul class="page-footer__list footnotes">
+        <li class="footnotes__item"><span class="copyright">© 2019 CPS</span>
+            <a href="#" class="footnotes__link footnotes__link--copyright" title="Разработано командой Apesong">Разработано командой Apesong</a></li>
+        <li class="footnotes__item"><a href="#" class="footnotes__link" title="Политика конфиденциальности">Политика конфиденциальности</a></li>
+        <li class="footnotes__item">Информация, размещенная на данной странице, не является публичной офертой</li>
       </ul>
     </footer>
 
