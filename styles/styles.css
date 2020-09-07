@@ -33,27 +33,32 @@ ul, ol {
 
 /* ROUND-ICON */
 .oicon {
-  display: flex;
+  display: block;
+  font-size: 0;
+}
+.oicon::after {
+  content: "";
+  display: block;
   width: 2.5rem;
   height: 2.5rem;
   background-color: #FF3E79;
   background-repeat: no-repeat;
   background-position: 50% 50%;
   border-radius: 50%;
-  font-size: 0;
+  line-height: 2.5rem;
   text-indent: 150%;
   white-space: nowrap;
   overflow: hidden;
 }
-.oicon:active, .oicon:hover, .oicon:focus {
+.oicon:active::after, .oicon:hover::after, .oicon:focus::after {
   background-color: #DD235C;
 }
-.oicon--burger { background-image: url('./../img/icon-menu.svg') }
-.oicon--call { background-image: url('./../img/icon-phone.svg') }
-.oicon--chat { background-image: url('./../img/icon-chat.svg') }
-.oicon--profile { background-image: url('./../img/icon-profile.svg') }
-.oicon--repair { background-image: url('./../img/icon-repair.svg') }
-.oicon--status { background-image: url('./../img/icon-checkstatus.svg') }
+.oicon--burger::after { background-image: url('./../img/icon-menu.svg') }
+.oicon--call::after { background-image: url('./../img/icon-phone.svg') }
+.oicon--chat::after { background-image: url('./../img/icon-chat.svg') }
+.oicon--profile::after { background-image: url('./../img/icon-profile.svg') }
+.oicon--repair::after { background-image: url('./../img/icon-repair.svg') }
+.oicon--status::after { background-image: url('./../img/icon-checkstatus.svg') }
 
 /* EXPAND-BUTTON */
 .expand-button {
@@ -229,7 +234,7 @@ ul, ol {
   background: linear-gradient(270deg, #F8F8F8 0%, #FFFFFF 98.61%);
   color: #7E7E82;
 }
-.chapter_content {
+.chapter__content {
   padding: 1rem 5%;
 }
 
@@ -313,28 +318,56 @@ ul, ol {
     display: none;
   }
 
+
+  .cpanel {
+    position: absolute;
+    z-index: 1;
+    right: 0;
+    top: 2.5rem;
+    background-color: transparent;
+    border-bottom: none;
+  }
+  .cpanel__blocks {
+    height: auto
+  }
+  .cpanel__list {
+    justify-content: flex-end;
+  }
   .page, .page-footer {
     position: relative;
-    /*left: 320px;*/
     background-color: #F8F8F8;
+  }
+  .page {
+    padding-top: 2.5rem;
+  }
+  .page__title {
+    padding-right: 45%;
+    padding-left: 3%;
   }
   .oicon--rich {
     position: relative;
-    margin-left: 100px;
-    text-indent: 0;
-  }
-  .oicon--rich::before {
-    content: attr(data-label);
-    position: absolute;
-    right: 100%;
-    top: 0;
-    display: block;
+    padding-right: 3rem;
+    margin-left: 1rem;
+    font-family: 'TT Lakes Medium';
     font-size: 1rem;
-    line-height: 1.5rem;
+    line-height: 2.5rem;
     color: #1B1C21;
     letter-spacing: -0.2px;
   }
-
+  .oicon--rich::after {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .oicon--repair {
+    margin-left: 0;
+  }
+  .cpanel, .page__menu, .page__hero {
+    padding: 0 3%
+  }
+  .chapter__title, .chapter__content  {
+    padding: 1rem 3%
+  }
   .chapters__list {
     flex-wrap: wrap;
   }
