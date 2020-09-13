@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="keywords" content="">
     <meta name="description" content="">
-    <link href="./styles/styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="./styles/styles.css">
   </head>
   <body class="services-page">
 
@@ -71,8 +72,24 @@
 
       <section class="page__chapter chapter chapter--brands" id="brands">
         <h2 class="chapter__title">Ремонт техники различных брендов</h2>
-        <article class="chapter__content">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis molestiae nam suscipit, quae nesciunt recusandae quod officiis tenetur aliquam blanditiis unde sequi, deserunt accusamus delectus ad, quia labore hic qui?</p>
+        <article class="chapter__content brands">
+          <div class="brands__container swiper-container">
+            <ul class="brands__list swiper-wrapper">
+              <li class="brands__item swiper-slide"><a href="./sidebar.html" class="brands__link brands__link--lenovo">&nbsp;</a></li>
+              <li class="brands__item swiper-slide"><a href="./sidebar.html" class="brands__link brands__link--samsung">&nbsp;</a></li>
+              <li class="brands__item swiper-slide"><a href="./sidebar.html" class="brands__link brands__link--apple">&nbsp;</a></li>
+              <li class="brands__item swiper-slide"><a href="./sidebar.html" class="brands__link brands__link--viewsonic">&nbsp;</a></li>
+              <li class="brands__item swiper-slide"><a href="./sidebar.html" class="brands__link brands__link--bosch">&nbsp;</a></li>
+              <li class="brands__item swiper-slide"><a href="./sidebar.html" class="brands__link brands__link--hp">&nbsp;</a></li>
+              <li class="brands__item swiper-slide"><a href="./sidebar.html" class="brands__link brands__link--acer">&nbsp;</a></li>
+              <li class="brands__item swiper-slide"><a href="./sidebar.html" class="brands__link brands__link--sony">&nbsp;</a></li>
+              <li class="brands__item swiper-slide"><a href="./sidebar.html" class="brands__link brands__link--lenovo">&nbsp;</a></li>
+              <li class="brands__item swiper-slide"><a href="./sidebar.html" class="brands__link brands__link--samsung">&nbsp;</a></li>
+              <li class="brands__item swiper-slide"><a href="./sidebar.html" class="brands__link brands__link--apple">&nbsp;</a></li>
+            </ul>
+            <div class="brands__pagination swiper-pagination"></div>
+          </div>
+          <button class="brands__expand-button expand-button">Показать все</button>
         </article>
       </section>
 
@@ -101,5 +118,43 @@
       </ul>
     </footer>
 
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script>
+  var brandsSwiper = new Swiper('.swiper-container', {
+    init: false,
+    slidesPerView: 'auto',
+    spaceBetween: 16,
+      //slideClass: 'brands-slide',
+      //slideActiveClass: 'brands-slide--active',
+    //  wrapperClass: 'brands-wrapper',
+    //  containerModifierClass: 'brands-container-',
+    breakpoints: {
+      320: {
+        spaceBetween: 16
+      },
+      540: {
+        spaceBetween: 24
+      }
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true
+    },
+    on: {
+      init: function () {
+        console.log('swiper initialized');
+      },
+    }
+  });
+
+  var enableSwiper = function() {
+    brandsSwiper.init();
+  }
+
+  var breakpoint = window.matchMedia( '(min-width:31.25em)' );
+  if ( breakpoint.matches === false ) {
+    enableSwiper();
+  }
+  </script>
   </body>
 </html>

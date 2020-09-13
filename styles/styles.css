@@ -35,6 +35,7 @@ ul, ol {
 .oicon {
   display: block;
   font-size: 0;
+  outline: none;
 }
 .oicon::after {
   content: "";
@@ -52,6 +53,9 @@ ul, ol {
 }
 .oicon:active::after, .oicon:hover::after, .oicon:focus::after {
   background-color: #DD235C;
+  border-radius: 10%;
+  filter: hue-rotate(190deg) brightness(2);
+  transition: all .5s ease;
 }
 .oicon--burger::after { background-image: url('./../img/icon-menu.svg') }
 .oicon--call::after { background-image: url('./../img/icon-phone.svg') }
@@ -59,6 +63,9 @@ ul, ol {
 .oicon--profile::after { background-image: url('./../img/icon-profile.svg') }
 .oicon--repair::after { background-image: url('./../img/icon-repair.svg') }
 .oicon--status::after { background-image: url('./../img/icon-checkstatus.svg') }
+.oicon--close::after { background-image: url('./../img/icon-close.svg') }
+.oicon--search::after { background-image: url('./../img/icon-search.svg') }
+
 
 /* EXPAND-BUTTON */
 .expand-button {
@@ -121,10 +128,13 @@ ul, ol {
 .hide-on-small {
   display: none;
 }
-.cpanel__item--logo {
+.logo {
+  display: block;
   width: 97px;
   height: 51px;
   background: url('./../img/cps-logo.svg') 50% 50% no-repeat;
+  font-size: 0;
+  text-decoration: none;
 }
 .cpanel__item--divider {
   content: "";
@@ -239,6 +249,71 @@ ul, ol {
 }
 
 
+/* BRANDS SECTION */
+.brands__list {
+  /*display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;*/
+
+  margin: 0 0 3rem;
+  padding: 0;
+  list-style: none;
+  /*gap: .5rem*/
+}
+.brands__item {
+  /*display: inline-block;
+  margin-right: 1rem;*/
+  min-width: 224px;
+  /*width: 15rem;*/
+  max-width: 240px;
+}
+.brands__link {
+  display: block;
+  position: relative;
+  height: 4.5rem;
+
+  background-color: #FFFFFF;
+  background-repeat: no-repeat;
+  background-position: 1rem 50%;
+  border: 1px solid #EAEAEA;
+  box-sizing: border-box;
+  border-radius: 6px;
+  text-decoration: none;
+}
+.brands__link--lenovo { background-image: url(./../files/brand-lenovo.png) }
+.brands__link--samsung { background-image: url(./../files/brand-samsung.png) }
+.brands__link--apple { background-image: url(./../files/brand-apple.png) }
+.brands__link--viewsonic { background-image: url(./../files/brand-viewsonic.png) }
+.brands__link--bosch { background-image: url(./../files/brand-bosch.png) }
+.brands__link--hp { background-image: url(./../files/brand-hp.png) }
+.brands__link--acer { background-image: url(./../files/brand-acer.png) }
+.brands__link--sony { background-image: url(./../files/brand-sony.png) }
+.brands__link--lenovo { background-image: url(./../files/brand-lenovo.png) }
+.brands__link--samsung { background-image: url(./../files/brand-samsung.png) }
+.brands__link--apple { background-image: url(./../files/brand-apple.png) }
+.brands__link::after {
+  position: absolute;
+  z-index: 1;
+  top: 1rem;
+  right: 1rem;
+  content: "";
+  display: block;
+  width: 2.5rem;
+  height: 2.5rem;
+  background: url(./../img/icon-go.svg) 0 0 no-repeat;
+}
+.brands__pagination {
+}
+.brands__expand-button {
+  display: none;
+}
+.swiper-slide {
+  /*display: flex;*/
+  /*width: 83%;*/
+  width: auto;
+}
+
+
 .site-menu {
   display: none;
 }
@@ -297,6 +372,10 @@ ul, ol {
     max-width: 100%;
   }
 
+
+  .brands__expand-button {
+    display: flex;
+  }
 
   .footnotes {
     display: flex;
