@@ -73,7 +73,7 @@
       <section class="page__chapter chapter chapter--brands" id="brands">
         <h2 class="chapter__title">Ремонт техники различных брендов</h2>
         <article class="chapter__content brands">
-          <div class="brands__container swiper-container">
+          <div class="brands__container brands__container--short swiper-container">
             <ul class="brands__list swiper-wrapper">
               <li class="brands__item swiper-slide"><a href="./sidebar.html" class="brands__link brands__link--lenovo">&nbsp;</a></li>
               <li class="brands__item swiper-slide"><a href="./sidebar.html" class="brands__link brands__link--samsung">&nbsp;</a></li>
@@ -89,7 +89,7 @@
             </ul>
             <div class="brands__pagination swiper-pagination"></div>
           </div>
-          <button class="brands__expand-button expand-button">Показать все</button>
+          <button class="brands__expand-button expand-button" type="button">Показать все</button>
         </article>
       </section>
 
@@ -124,17 +124,9 @@
     init: false,
     slidesPerView: 'auto',
     spaceBetween: 16,
-      //slideClass: 'brands-slide',
-      //slideActiveClass: 'brands-slide--active',
-    //  wrapperClass: 'brands-wrapper',
-    //  containerModifierClass: 'brands-container-',
     breakpoints: {
-      320: {
-        spaceBetween: 16
-      },
-      540: {
-        spaceBetween: 24
-      }
+      320: { spaceBetween: 16 },
+      540: { spaceBetween: 24 }
     },
     pagination: {
       el: '.swiper-pagination',
@@ -155,6 +147,19 @@
   if ( breakpoint.matches === false ) {
     enableSwiper();
   }
+
+  var brandsButton = document.querySelector(".brands__expand-button");
+  var brandsContainer = document.querySelector(".brands__container");
+  var toggleBrands = function() {
+    var reverse = brandsButton.classList.contains("expand-button--reverse");
+    brandsButton.classList.toggle("expand-button--reverse");
+    brandsButton.textContent = reverse? "Показать все" : "Скрыть";
+    brandsContainer.classList.toggle("brands__container--short");
+    //console.log(brandsContainer.querySelector(".brands__list").offsetTop);
+  }
+  brandsButton.addEventListener('click', function() {
+    toggleBrands();
+  });
   </script>
   </body>
 </html>
