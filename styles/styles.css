@@ -251,21 +251,13 @@ ul, ol {
 
 /* BRANDS SECTION */
 .brands__list {
-  /*display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;*/
-
   margin: 0 0 3rem;
   padding: 0;
   list-style: none;
-  /*gap: .5rem*/
 }
 .brands__item {
-  /*display: inline-block;
-  margin-right: 1rem;*/
   min-width: 224px;
-  /*width: 15rem;*/
-  max-width: 240px;
+  max-width: 300px;
 }
 .brands__link {
   display: block;
@@ -373,6 +365,15 @@ ul, ol {
   }
 
 
+  .brands__list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+    width: 100%;
+  }
+  .brands__item {
+    flex: 0 1 45%
+  }
   .brands__expand-button {
     display: flex;
   }
@@ -385,6 +386,22 @@ ul, ol {
   .footnotes__item {flex-basis: 33.33%}
   .footnotes__item:first-child {text-align: left}
   .footnotes__item:last-child {text-align: right}
+}
+
+@media screen and (min-width:768px) {
+
+  .cpanel, .page__menu , .page__hero {
+    padding: 0 3%
+  }
+  .page__title {
+    padding-left: 3%
+  }
+  .chapter__title, .chapter__content {
+    padding: 1rem 3%
+  }
+  .page-footer {
+    padding: 1rem 3% 0
+  }
 }
 
 @media screen and (min-width:1120px) {
@@ -421,7 +438,6 @@ ul, ol {
   }
   .page__title {
     padding-right: 45%;
-    padding-left: 3%;
   }
   .oicon--rich {
     position: relative;
@@ -441,12 +457,12 @@ ul, ol {
   .oicon--repair {
     margin-left: 0;
   }
-  .cpanel, .page__menu, .page__hero {
+  /*.cpanel, .page__menu, .page__hero {
     padding: 0 3%
   }
   .chapter__title, .chapter__content  {
     padding: 1rem 3%
-  }
+  }*/
   .chapters__list {
     flex-wrap: wrap;
   }
