@@ -251,13 +251,6 @@ ul, ol {
 
 
 /* BRANDS SECTION */
-.brands__container {
-}
-.brands__container--short {
-  height: 11rem;
-  overflow: hidden;
-  transition: all .3s ease;
-}
 .brands__list {
   align-items: flex-start;
   margin: 0 0 3rem;
@@ -385,6 +378,12 @@ ul, ol {
   }
 
 
+  .brands__container {
+  }
+  .brands__container--short {
+    height: 11rem;
+    overflow: hidden;
+  }
   .brands__list {
     display: flex;
     flex-wrap: wrap;
