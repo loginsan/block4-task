@@ -66,6 +66,26 @@ ul, ol {
 .oicon--close::after { background-image: url('./../img/icon-close.svg') }
 .oicon--search::after { background-image: url('./../img/icon-search.svg') }
 
+@media screen and (min-width:1120px) {
+  .oicon--rich {
+    position: relative;
+    padding-right: 3rem;
+    margin-left: 1rem;
+    font-family: 'TT Lakes Medium';
+    font-size: 1rem;
+    line-height: 2.5rem;
+    color: #1B1C21;
+    letter-spacing: -0.2px;
+  }
+  .oicon--rich::after {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .oicon--repair {
+    margin-left: 0;
+  }
+}
 
 /* EXPAND-BUTTON */
 .expand-button {
@@ -209,9 +229,7 @@ ul, ol {
 }
 
 
-.hero {
-
-}
+.hero {}
 .hero__texts {padding: 0 5% 1.5rem}
 .hero__paragraph {
   margin: 0 0 1.5rem;
@@ -313,8 +331,6 @@ ul, ol {
   display: none;
 }
 .swiper-slide {
-  /*display: flex;*/
-  /*width: 83%;*/
   width: auto;
 }
 
@@ -475,24 +491,7 @@ ul, ol {
   .page__title {
     padding-right: 45%;
   }
-  .oicon--rich {
-    position: relative;
-    padding-right: 3rem;
-    margin-left: 1rem;
-    font-family: 'TT Lakes Medium';
-    font-size: 1rem;
-    line-height: 2.5rem;
-    color: #1B1C21;
-    letter-spacing: -0.2px;
-  }
-  .oicon--rich::after {
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-  .oicon--repair {
-    margin-left: 0;
-  }
+
   /*.cpanel, .page__menu, .page__hero { padding: 0 3% }
   .chapter__title, .chapter__content  { padding: 1rem 3% }*/
   .chapters__list {
