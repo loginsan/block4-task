@@ -33,6 +33,18 @@ ul, ol {
 .dn {
   display: none;
 }
+.hide-on-small {
+  display: none;
+}
+.logo {
+  display: block;
+  width: 97px;
+  height: 51px;
+  background: url('./../img/cps-logo.svg') 50% 50% no-repeat;
+  font-size: 0;
+  text-decoration: none;
+}
+
 
 /* ROUND-ICON */
 .oicon {
@@ -121,10 +133,11 @@ ul, ol {
 
 
 .page {
-  padding: 1.5rem 0; /* 1.5rem 5% */
+  padding: 1.5rem 0;
 }
 
 
+/* CPANEL */
 .cpanel {
   padding: 0 5%;
   border-bottom: 1px solid #D9FFF5;
@@ -149,17 +162,6 @@ ul, ol {
 .cpanel__item:last-child {
   margin-right: 0;
 }
-.hide-on-small {
-  display: none;
-}
-.logo {
-  display: block;
-  width: 97px;
-  height: 51px;
-  background: url('./../img/cps-logo.svg') 50% 50% no-repeat;
-  font-size: 0;
-  text-decoration: none;
-}
 .cpanel__item--divider {
   content: "";
   height: 2rem;
@@ -170,8 +172,25 @@ ul, ol {
 .cpanel__link {
   text-decoration: none;
 }
+@media screen and (min-width:1120px) {
+  .cpanel {
+    position: absolute;
+    z-index: 1;
+    right: 0;
+    top: 2.5rem;
+    background-color: transparent;
+    border-bottom: none;
+  }
+  .cpanel__blocks {
+    height: auto;
+  }
+  .cpanel__list {
+    justify-content: flex-end;
+  }
+}
 
 
+/* PAGE TITLE */
 .page__title {
   position: relative;
   margin: 0 0 1.5rem;
@@ -195,15 +214,10 @@ ul, ol {
 }
 
 
+/* PAGE MENU / CHAPTERS LIST */
 .page__menu {
   margin-bottom: 1.5rem;
   padding: 0 5%;
-}
-
-.chapters__list {
-  display: flex;
-  list-style: none;
-  overflow: scroll;
 }
 .chapters__item {
   padding: .5rem 1rem;
@@ -226,14 +240,27 @@ ul, ol {
 .chapters__link:active, .chapters__link:hover, .chapters__link:focus {
   color: #1B1C21;
 }
+.chapters__list {
+  display: flex;
+  list-style: none;
+  overflow: scroll;
+}
 .chapters__list::after {
   content: "";
   width: 5rem;
 }
+@media screen and (min-width:1120px) {
+  .chapters__list {
+    flex-wrap: wrap;
+    overflow: auto;
+  }
+}
 
 
-.hero {}
-.hero__texts {padding: 0 5% 1.5rem}
+/* HERO BLOCK */
+.hero__texts {
+  padding: 0 5% 1.5rem;
+}
 .hero__paragraph {
   margin: 0 0 1.5rem;
   font-size: .875rem;
@@ -258,9 +285,36 @@ ul, ol {
   display: block;
   max-width: 100%;
 }
+@media screen and (min-width:540px) {
+  .hero {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 0 5%;
+  }
+  .hero__texts {
+    flex-basis: 45%;
+    padding: 0 0 1.5rem;
+  }
+  .hero__figure {
+    flex-basis: 46.875%;
+  }
+  .hero__img {
+    border-radius: 6px;
+    max-width: 100%;
+  }
+  .hero__spoiler--short { height: 8rem }
+}
+@media screen and (min-width:768px) {
+  .hero__spoiler--short { height: 10rem }
+}
+@media screen and (min-width:1120px) {
+  .hero__spoiler--short { height: 12rem }
+}
 
 
-.page__chapter {}
+/* PAGE__CHAPTER */
 .chapter__title {
   padding: 1rem 5%;
   margin: 0;
@@ -280,14 +334,13 @@ ul, ol {
 
 /* BRANDS SECTION */
 .brands__list {
-  /**align-items: flex-start;*/
   margin: 0 0 3rem;
   padding: 0;
   list-style: none;
 }
 .brands__item {
   min-width: 224px;
-  /*max-width: 300px;*/
+  max-width: 240px;
   height: auto;
   grid-area: "brand";
 }
@@ -295,9 +348,7 @@ ul, ol {
   display: block;
   position: relative;
   height: 4.5rem;
-  background-color: #FFFFFF;
-  background-repeat: no-repeat;
-  background-position: 1rem 50%;
+  background: #FFFFFF no-repeat 1rem 50%;
   border: 1px solid #EAEAEA;
   box-sizing: border-box;
   border-radius: 6px;
@@ -334,25 +385,55 @@ ul, ol {
   border-radius: 50%;
   transition: all .1s linear;
 }
-.brands__pagination {
-}
 .brands__expand-button {
   display: none;
 }
-.swiper-slide {
-  width: auto;
+@media screen and (min-width:540px) {
+  .brands__container {
+    height: auto;
+    overflow: visible;
+    transition: all .3s ease;
+    margin-bottom: 1rem;
+  }
+  .brands__container--short {
+    height: 10rem;
+    overflow: hidden;
+  }
+  .brands__expand-button {
+    display: flex;
+  }
+  .brands__list {
+    display: grid;
+    margin-bottom: 1rem;
+    grid-template-areas: "brand brand";
+    gap: 1rem;
+  }
+}
+@media screen and (min-width:768px) {
+  .brands__list {
+    grid-template-areas: "brand brand brand";
+    gap: 1rem 1.5rem;
+  }
+}
+@media screen and (min-width:1120px) {
+  .brands__list {
+    grid-template-areas: "brand brand brand brand";
+    gap: 1rem 2rem;
+  }
 }
 
 
+/* ASIDE / SITE MENU */
 .site-menu {
   display: none;
 }
 
+
+/* FOOTER */
 .page-footer {
   padding: 1rem 5% 0;
   border-top: 1px solid #D9FFF5;
 }
-
 .footnotes {
   list-style: none;
   text-align: center;
@@ -373,57 +454,7 @@ ul, ol {
 .footnotes__link--copyright {
   display: block;
 }
-
 @media screen and (min-width:540px) {
-
-  .hide-on-small {
-    display: block;
-  }
-
-  .hero__spoiler--short {
-    height: 8rem;
-  }
-  .hero {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 2rem;
-    padding: 0 5%;
-  }
-  .hero__texts {
-    flex-basis: 45%;
-    padding: 0 0 1.5rem
-  }
-  .hero__figure {
-    flex-basis: 46.875%;
-  }
-  .hero__img {
-    border-radius: 6px;
-    max-width: 100%;
-  }
-
-
-  .brands__container {
-    height: auto;
-    overflow: visible;
-    transition: all .3s ease;
-    margin-bottom: 1rem;
-  }
-  .brands__container--short {
-    height: 10rem;
-    overflow: hidden;
-  }
-  .brands__list {
-    display: grid;
-    margin-bottom: 1rem;
-    grid-template-areas: "brand brand";
-    gap: 1rem;
-  }
-
-  .brands__expand-button {
-    display: flex;
-  }
-
   .footnotes {
     display: flex;
     justify-content: space-between;
@@ -434,8 +465,15 @@ ul, ol {
   .footnotes__item:last-child {text-align: right}
 }
 
-@media screen and (min-width:768px) {
 
+@media screen and (min-width:540px) {
+  .hide-on-small {
+    display: block;
+  }
+}
+
+
+@media screen and (min-width:768px) {
   .cpanel, .page__menu , .page__hero {
     padding: 0 3%
   }
@@ -448,18 +486,9 @@ ul, ol {
   .page-footer {
     padding: 1rem 3% 0
   }
-  .hero__spoiler--short {
-    height: 10rem;
-  }
-
-  .brands__list {
-    grid-template-areas: "brand brand brand";
-    gap: 1rem 1.5rem;
-  }
 }
 
 @media screen and (min-width:1120px) {
-
   body {
     position: relative;
     background-color: #FFFFFF;
@@ -468,21 +497,6 @@ ul, ol {
     display: none;
   }
 
-
-  .cpanel {
-    position: absolute;
-    z-index: 1;
-    right: 0;
-    top: 2.5rem;
-    background-color: transparent;
-    border-bottom: none;
-  }
-  .cpanel__blocks {
-    height: auto
-  }
-  .cpanel__list {
-    justify-content: flex-end;
-  }
   .page, .page-footer {
     position: relative;
     background-color: #F8F8F8;
@@ -493,17 +507,8 @@ ul, ol {
   .page__title {
     padding-right: 45%;
   }
-  .hero__spoiler--short {
-    height: 12rem;
-  }
-  /*.cpanel, .page__menu, .page__hero { padding: 0 3% }
-  .chapter__title, .chapter__content  { padding: 1rem 3% }*/
   .chapters__list {
     flex-wrap: wrap;
     overflow: auto;
-  }
-  .brands__list {
-    grid-template-areas: "brand brand brand brand";
-    gap: 1rem 2rem;
   }
 }
