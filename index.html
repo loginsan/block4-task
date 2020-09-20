@@ -61,9 +61,11 @@
       </nav>
 
       <section class="page__hero hero">
-        <article class="hero__texts hero__texts--short">
-          <p class="hero__paragraph">Мы являемся авторизованным сервисным центром по ремонту техники Dell. Только у нас вы можете отремонтировать свой ноутбук Dell с официальной гарантией производителя.</p>
-          <p class="hero__paragraph">Мы успешно работаем с 1992 года и заслужили репутацию надежного партнера, что подтверждает большое количество постоянных клиентов. Мы гордимся тем, что к нам обращаются по рекомендациям и, в свою очередь, советуют нас родным и близким.</p>
+        <article class="hero__texts">
+          <div class="hero__spoiler hero__spoiler--short">
+            <p class="hero__paragraph">Мы являемся авторизованным сервисным центром по ремонту техники Dell. Только у нас вы можете отремонтировать свой ноутбук Dell с официальной гарантией производителя.</p>
+            <p class="hero__paragraph">Мы успешно работаем с 1992 года и заслужили репутацию надежного партнера, что подтверждает большое количество постоянных клиентов. Мы гордимся тем, что к нам обращаются по рекомендациям и, в свою очередь, советуют нас родным и близким.</p>
+          </div>
           <button class="hero__expand-button expand-button">Читать далее</button>
         </article>
 
@@ -120,46 +122,70 @@
 
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script>
-  var brandsSwiper = new Swiper('.brands__container.swiper-container', {
-    init: false,
-    slidesPerView: 'auto',
-    spaceBetween: 16,
-    breakpoints: {
-      320: { spaceBetween: 16 },
-      540: { spaceBetween: 24 }
-    },
-    pagination: {
-      el: '.brands__pagination.swiper-pagination',
-      clickable: true
-    },
-    on: {
-      init: function () {
-        console.log('swiper initialized');
-      },
-    }
-  });
+  (function() {
+    'use strict';
+    const breakp = window.matchMedia('(min-width:33.75em)');
+    let brandsSwiper;
+    let brPag = document.querySelector('.brands__pagination.swiper-pagination');
 
-  var enableSwiper = function() {
-    brandsSwiper.init();
+    const enableSwiper = function() {
+      brandsSwiper = new Swiper('.brands__container.swiper-container', {
+        a11y: true,
+        keyboardControl: true,
+        grabCursor: true,
+        slidesPerView: 'auto',
+        spaceBetween: 16,
+        breakpoints: {
+          320: { spaceBetween: 16 },
+          540: { spaceBetween: 24 }
+        },
+        pagination: {
+          el: '.brands__pagination.swiper-pagination',
+          clickable: true
+        }
+      });
+    };
+
+    const breakpChecker = function() {
+      if (breakp.matches === true) {
+        if (brandsSwiper !== undefined) {
+          brPag.classList.add("dn");
+          brandsSwiper.destroy(true, true);
+        }
+        return;
+        //console.log("More");
+      } else if ( breakp.matches === false ) {
+        brPag.classList.remove("dn");
+        return enableSwiper();
+        //console.log("Less");
+      }
+    };
+    breakp.addListener(breakpChecker);
+    breakpChecker();
+  })();
+
+
+  let expandDo = function(button, container, cname, text, textR) {
+    let reverse = button.classList.contains("expand-button--reverse");
+    let sh = document.querySelector("." + cname).scrollHeight;
+    button.classList.toggle("expand-button--reverse");
+    button.textContent = reverse? text : textR;
+    container.style = reverse? "" : `height: ${sh}px`;
+    container.classList.toggle(cname + "--short");
   }
 
-  var breakpoint = window.matchMedia( '(min-width:33.75em)' );
-  if ( breakpoint.matches === false ) {
-    enableSwiper();
-  }
-
-  var brandsButton = document.querySelector(".brands__expand-button");
-  var brandsContainer = document.querySelector(".brands__container");
-  var toggleBrands = function() {
-    var reverse = brandsButton.classList.contains("expand-button--reverse");
-    brandsButton.classList.toggle("expand-button--reverse");
-    brandsButton.textContent = reverse? "Показать все" : "Скрыть";
-    brandsContainer.classList.toggle("brands__container--short");
-    //console.log(brandsContainer.querySelector(".brands__list").offsetTop);
-  }
+  let brandsButton = document.querySelector(".brands__expand-button"),
+      brandsContainer = document.querySelector(".brands__container");
   brandsButton.addEventListener('click', function() {
-    toggleBrands();
+    expandDo(brandsButton, brandsContainer, "brands__container", "Показать все", "Скрыть");
   });
+
+  let heroButton = document.querySelector(".hero__expand-button"),
+      heroContainer = document.querySelector(".hero__spoiler");
+  heroButton.addEventListener('click', function() {
+    expandDo(heroButton, heroContainer, "hero__spoiler", "Читать далее", "Скрыть");
+  });
+
   </script>
   </body>
 </html>
